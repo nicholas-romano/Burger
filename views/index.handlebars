@@ -6,10 +6,23 @@
   {{#each burgers}}
     {{#unless devoured}}
         <li>
-            <p>ID: {{this.id}}</p>
-            <p>Burger: {{this.burger_name}}</p>
+            <label>ID: {{this.id}} Burger: {{this.burger_name}}
+                <button class="devour-it">Devour It!</button>
+            </label>
         </li>
     {{/unless}}
+  {{/each}}
+</ul>
+
+<h2>Burgers Devoured:</h2>
+
+<ul>
+  {{#each burgers}}
+    {{#if devoured}}
+        <li>
+            <label>ID: {{this.id}} Burger: {{this.burger_name}}</label>
+        </li>
+    {{/if}}
   {{/each}}
 </ul>
 
@@ -17,14 +30,8 @@
 <form class="create-form">
 
   <div class="form-group">
-    <label for="ca">Burger Name:</label>
-    <input type="text" id="ca" name="name">
-  </div>
-
-  <div class="form-group">
-    <label for="devoured">Devoured?</label><br>
-    <input type="radio" name="devoured" value="1" checked> Devoured<br>
-    <input type="radio" name="not-devoured" value="0"> Not Devoured
+    <label for="burger_name">Burger Name:</label>
+    <input type="text" id="burger_name" name="burger_name">
   </div>
 
   <button type="submit">Add Burger</button>
