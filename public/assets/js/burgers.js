@@ -1,4 +1,5 @@
 $(function () {
+  $('#burger_name').val('');
 
     $(".devour-it").on("click", function () {
         //console.log("devour it!");
@@ -42,6 +43,22 @@ $(function () {
             location.reload();
           }
         );
+    });
+
+    $(".delete").on("click", function () {
+
+        var id = $(this).data("id");
+
+        $.ajax("/api/burgers/" + id, {
+          type: "DELETE"
+        }).then(
+          function() {
+            console.log("deleted burger");
+            // Reload the page to get the updated list    
+            location.reload();
+          }
+        );
+
     });
 
 });
