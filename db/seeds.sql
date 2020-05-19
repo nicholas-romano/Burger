@@ -4,5 +4,3 @@ INSERT INTO burgers (burger_name, devoured) VALUES ('A1 Steakhouse Burger', fals
 
 INSERT INTO burgers (burger_name, devoured) VALUES ('Great American Burger', true);
 INSERT INTO burgers (burger_name, devoured) VALUES ('Texas Smokehouse Burger', true);
-
-SELECT * FROM burgers;
